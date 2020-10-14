@@ -1,14 +1,13 @@
 #include <iostream>
+#include <cstdio>
 using namespace std;
 
-int main()
-{
-    int num, a, b;
-    char c;
-    cin >> num;
-    for(int i=0; i<num; i++){
-        cin >> a >> c >> b;
-        cout << a+b << endl;
+int main() {
+    int t, a, b;
+    cin >> t;
+    while (t--) {
+        scanf("%d,%d", &a, &b);
+        cout << a + b << '\n';
     }
     return 0;
 }
