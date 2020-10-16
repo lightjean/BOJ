@@ -26,6 +26,9 @@ int find_max(int under, int top, int row, int dice[][6]) { // 주사위 옆면�
 }
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
     int n, dice[10000][6];
     cin >> n;
 
