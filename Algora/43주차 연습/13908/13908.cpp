@@ -1,12 +1,27 @@
 #include <iostream>
-#include <cstring>
 using namespace std;
+
+int n, m, password[7], hint[7];
+
+bool check(int a) { // 선견지명으로 알게 된 비번의 일부 숫자가 모두 있는지 검사
+    bool password[10] = {0};
+
+    for (int i = 0; i < n; i++) {
+        password[a % 10] = 1;
+        a /= 10;
+    }
+
+    for (int i = 0; i < m; i++)
+        if (!password[hint[i]])
+            return 0;
+
+    return 1;
+}
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     
-    int n, m, password[7], hint[7];
     cin >> n >> m;
 
     for (int i = 0; i < m; i++)
@@ -17,34 +32,9 @@ int main() {
         end *= 10;
 
     int cnt = 0;
-    for (int i = 0; i < end; i++) {
-        int temp = i, idx = 0;
-        bool check[7] = {0};
-        memset(password, -1, sizeof(password));
-
-        while (1) { // 자리수 저장 및 검사
-            if (idx == n)
-                break;
-            if (temp == 0)
-                password[idx] = 0;
-            else password[idx] = temp % 10;
-
-            for (int j = 0; j < m; j++)
-                if (password[idx] == hint[j])
-                    check[j] = 1;
-            
-            temp /= 10;
-            idx++;
-        }
-
-        bool flag = 1;
-        for (int j = 0; j < m; j++)
-            if (check[j] == 0)
-                flag = 0;
-
-        if (flag)
+    for (int i = 0; i < end; i++)
+        if (check(i))
             cnt++;
-    }
 
     cout << cnt << '\n';
     return 0;
