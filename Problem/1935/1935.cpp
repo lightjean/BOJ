@@ -1,32 +1,53 @@
 #include <iostream>
+#include <cstdio>
 #include <stack>
 using namespace std;
 
-int main()
-{
-    int n, idx = 0, num[27];
-    double ans;
-    string str;
-    stack<char> s;
+int main() {
+    int n;
+    double operand[26];
+    char expression[101];
+    stack<double> s;
 
-    cin >> n;
-    cin >> str;
+    cin >> n >> expression;
 
-    for(int i = 0; i < n; i++) {
-        cin >> num[i];
-    }
+    for (int i = 0; i < n; i++)
+        cin >> operand[i];
 
-    while(str[idx] != '\0') {
-        if(str[idx] >= 65 && str[idx] <= 90) { // 알파벳일 때 숫자 넣기
-            s1.push(num[str[idx] - 65]);
-        } else { // 연산자가 들어올 때
-            if(str[idx] == '*') {
-                ans += s.top();
-            }
-            s.push(str[idx]);
+    int i = 0;
+    double a, b;
+
+    while (expression[i] != '\0') {
+        if (expression[i] >= 'A' && expression[i] <= 'Z') 
+            s.push(operand[(int)expression[i] - (int)'A']);
+        else if (expression[i] == '+') {
+            b = s.top();
+            s.pop();
+            a = s.top();
+            s.pop();
+            s.push(a + b);
+        } else if (expression[i] == '-') {
+            b = s.top();
+            s.pop();
+            a = s.top();
+            s.pop();
+            s.push(a - b);
+        } else if (expression[i] == '*') {
+            b = s.top();
+            s.pop();
+            a = s.top();
+            s.pop();
+            s.push(a * b);
+        } else {
+            b = s.top();
+            s.pop();
+            a = s.top();
+            s.pop();
+            s.push(a / b);
         }
-        idx++;
+        i++;
     }
 
-
-} // 연산자 우선순위를 따져야 함 *이거나 /이면 바로 계산
+    printf("%.2lf\n", s.top());
+    return 0;
+}
