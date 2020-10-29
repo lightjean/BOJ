@@ -18,7 +18,7 @@ int main() {
     for (int i = 0; i < n; i++)
         cin >> v2[i];
 
-    int idx = find(v1.begin(), v1.end(), v2[0]) - v1.begin(); // iterator끼리 빼면 거리가 나옴
+    int idx = find(v1.begin(), v1.end(), v2[0]) - v1.begin(); // iterator끼리 빼면 해당 인덱스가 나옴
     bool direction = 0;
 
     if (n == 1) { // 100%에서 틀린 이유
