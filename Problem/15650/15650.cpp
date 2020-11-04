@@ -40,7 +40,6 @@ void run(int index, int selected, int n, int m) { // index 수를 선택할지 �
     if (index > n) return; // 고르는 수가 n을 벗어나면 종료
     ans[selected] = index;
     run(index + 1, selected + 1, n, m); // index 수를 선택할 때
-    ans[selected] = 0;
     run(index + 1, selected, n, m); // index 수를 선택하지 않을 때
 }
 
