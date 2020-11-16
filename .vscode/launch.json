@@ -12,7 +12,7 @@
             // 
             // 예)  D:/Git/algorithm/BOJ/2606.exe
             // 혹은 D:\\Git\\algorithm\\BOJ\\2606.exe
-            "program": "D:\\Coding And Project\\Coding\\Algorithm\\Baekjoon-Online-Judge\\Problem\\1000\\1000.exe",
+            "program": "D:\\Coding And Project\\Coding\\Algorithm\\Baekjoon-Online-Judge\\Problem\\Debugging\\test.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
