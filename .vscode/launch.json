@@ -12,7 +12,7 @@
             // 
             // 예)  D:/Git/algorithm/BOJ/2606.exe
             // 혹은 D:\\Git\\algorithm\\BOJ\\2606.exe
-            "program": "${workspaceFolder}/test.exe",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
