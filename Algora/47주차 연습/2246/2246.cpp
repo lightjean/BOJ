@@ -1,6 +1,6 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 int n, d, c, tmp = 10001, ans = 0;
@@ -17,9 +17,9 @@ int main() {
         v.push_back({d, c});
     }
 
-    sort(v.begin(), v.end()); // 거리 순으로 정렬을 해줌
+    sort(v.begin(), v.end());  // 거리 순으로 정렬을 해줌
 
-    for (int i = 0; i < n; i++) { // 거리 순으로 정렬을 했기에 거리가 멀어지면 숙박비가 싸지는 것만 세기
+    for (int i = 0; i < n; i++) {  // 거리 순으로 정렬을 했기에 거리가 멀어지면 숙박비가 싸지는 것만 세기
         if (tmp > v[i].second) {
             tmp = v[i].second;
             ans += 1;
