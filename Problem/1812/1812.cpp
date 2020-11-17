@@ -16,7 +16,7 @@ int main() {
         sum += v[i];
     }
 
-    sum /= 2;  // 전체 학생의 사탕 합
+    sum /= 2; // 전체 학생의 사탕 합
 
     int tmp = 0;
     for (int i = 0; i < num; i++) // a를 제외한 모든 합
