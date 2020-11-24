@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "*.cpp": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "xutility": "cpp",
+        "random": "cpp",
+        "utility": "cpp",
+        "algorithm": "cpp"
     }
 }
